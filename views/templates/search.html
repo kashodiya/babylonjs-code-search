@@ -1,0 +1,36 @@
+<script id="search-results-template" type="text/x-handlebars-template">
+  {{#each snippets}}
+    <tr>
+      <td>
+        <a class="snippetCodeView" data-identifier="{{SnippetIdentifier}}">{{SnippetIdentifier}}</a>
+      </td>
+      <td>
+        <button data-identifier="{{SnippetIdentifier}}" type="button" class="snippetCodeView btn btn-default btn-xs">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </button>      
+      </td>
+      <td>
+        <button data-identifier="{{SnippetIdentifier}}" type="button" class="snippetRun btn btn-default btn-xs">
+          <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+        </button>      
+      </td>
+    </tr>
+  {{/each}}
+</script>
+
+
+<script id="versions-template" type="text/x-handlebars-template">
+  <ul class="list-inline">
+    <li>Versions:</li>
+  {{#each snippets}}
+    <li>
+      <a data-from="version-links" class="snippetCodeView" data-version="{{Version}}" data-id="{{Id}}" data-identifier="{{SnippetIdentifier}}">
+        <span class="badge">{{Version}}</span> 
+        <!-- 
+        [{{Version}}]
+        -->
+      </a>
+    </li>
+  {{/each}}
+  </ul>
+</script>

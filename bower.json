@@ -19,6 +19,9 @@
   "dependencies": {
     "ace-builds": "~1.2.3",
     "jquery": "~2.2.0",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "handlebars": "~4.0.5",
+    "lodash": "~4.2.1",
+    "esprima": "~2.0.0"
   }
 }

@@ -9,14 +9,30 @@ block content
 					span.icon-bar
 					span.icon-bar
 					span.icon-bar
-				a.navbar-brand(href='#') BABYLONJS Code Search
-			#navbar.navbar-collapse.collapse
-				ul.nav.navbar-nav.navbar-right
-					li.active
-						a(href='#') Home
+				a.navbar-brand(href='/') BABYLONJS Code Search
+			//	
+				#navbar.navbar-collapse.collapse
+					ul.nav.navbar-nav.navbar-right
+						li.active
+							a(href='/') Home
 	.container
-		form#searchForm
-			.form-group
-				label(for='searchTerm') Search
-				input#searchTerm.form-control(placeholder='search')
-			button.btn.btn-default(type='submit') Submit
+		form#searchForm.form-inline
+			.row
+				.col-sm-7
+					input#searchTerm.form-control(placeholder='search', value="BABYLON")
+				.col-lg-2
+					button.btn.btn-default(type='submit') Search
+	.container.hide#searchResultContainer
+		hr
+		.row
+			.col-sm-3#snippetCol
+				h4 Snippets
+				table.table.table-striped
+					tbody#snippetList		
+			.col-sm-9
+				.row
+					.col-sm-4
+						h4#snippetTitle Code
+				div#allVersionsList		
+				#editor
+	include templates/search.html

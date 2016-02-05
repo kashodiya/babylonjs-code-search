@@ -10,15 +10,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/search', function(req, res, next) {
-	console.log(req.query);
+	console.log("Searching...", req.query);
 	//?q=Box&page=2&max=25&bf=all
 	var promise = babylonjsSearch.search(req.query.searchTerm);
 	promise.then(function(parsedBody) {
-			console.log(parsedBody);
+			console.log("Search success.");
 			res.json(parsedBody);
 		})
 		.catch(function(err) {
-			res.json({err: err});
+			res.json({
+				err: err
+			});
 		});
 
 });
